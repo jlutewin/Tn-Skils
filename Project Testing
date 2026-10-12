@@ -1,14 +1,21 @@
 step1
-1. The image shows the ServiceNow Catalog Items list with item names, descriptions, active status, roles, catalogs, categories, and prices.
-2. It displays catalog items such as 3M Privacy Filter, Microsoft Access, Adobe Acrobat, Apple iPhone 13, and other products.
-3. The page allows users to search catalog items, create new items, and activate or deactivate selected items.
+1. The image shows the ServiceNow Catalog Item – Standard Laptop configuration page, with fields for State, Checked out, Owner, and Secondary owners.
+2. The Process Engine tab allows users to configure the Flow, Workflow, and Execution Plan for the catalog item.
+3. The page provides options to Copy, Try It, Update, Edit in Catalog Builder, and Delete the item, along with related tabs for Variables, Catalog UI Policies, and Catalog Client Scripts.
 
 step2
-1. The image shows the ServiceNow Hardware Catalog, displaying items such as iPad Pro, Sales Laptop, Standard Laptop, Apple Watch, and Apple MacBook Pro.
-2. Each catalog item includes a product description, a Preview option, and pricing details, including monthly or annual costs where applicable.
-3. Users can browse available hardware products, review their details and prices, and select items based on their requirements.
+1. The image shows the ServiceNow Catalog Items list with a navigation menu open under the Self-Service section.
+2. The menu includes options such as Service Catalog, Employee Center, Knowledge, Incidents, My Requests, and Requested Items.
+3. The catalog list displays item details, including Active status, Catalogs, Category, Price, Type, and Updated date, with options to activate or deactivate items.1. The image shows the ServiceNow Catalog Items list with a navigation menu open under the Self-Service section.
+2. The menu includes options such as Service Catalog, Employee Center, Knowledge, Incidents, My Requests, and Requested Items.
+3. The catalog list displays item details, including Active status, Catalogs, Category, Price, Type, and Updated date, with options to activate or deactivate items.
 
 step3
-1. The image shows the ServiceNow Service Catalog homepage with categories such as Services, Hardware, Software, Office, Desktops, Peripherals, and Mobiles.
-2. Each category provides access to specific products or services, including hardware devices, software installations, office supplies, and mobile phones.
-3. The page also includes a catalog search bar, Top Requests list, and Shopping Cart to help users find and request items easily.
+1. The image shows the ServiceNow Request – REQ0010001 form, with the request marked as approved and requested for System Administrator.
+2. It displays request details such as the opened date, due date, price (₹105,583.5315), approval status, and request state (Pending Approval).
+3. Users can add descriptions, special instructions, and work notes, and manage the request using options such as Update, Add New Item, Cancel Request, Copy, and Delete.
+
+step4
+1. The image shows ServiceNow Workflow Studio, where a flow named “Standard laptop task” is being configured and is currently inactive.
+2. The flow uses a Service Catalog trigger, and the Actions menu provides the “Create Catalog Task” action under ServiceNow Core.
+3. The Data panel displays flow variables and trigger data, including Requested Item Record, Run Start Time UTC, Run Start Date/Time, and Table Name.
