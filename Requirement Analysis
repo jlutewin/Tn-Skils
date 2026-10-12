@@ -1,0 +1,74 @@
+# Requirement Analysis
+
+## 1. Introduction
+The requirement analysis phase identifies the functional and technical requirements needed to automate the standard laptop procurement process using ServiceNow Flow Designer. The primary goal is to ensure that laptop configuration tasks are automatically created and assigned to the Hardware team after the service request is approved.
+
+## 2. Functional Requirements
+
+- **FR1 – Service Catalog Request:** The system must allow users to place standard laptop orders through the Service Catalog.
+- **FR2 – Approval Process:** The system must support the approval process for standard laptop requests.
+- **FR3 – Workflow Trigger:** The system must use a Service Catalog trigger in Flow Designer to initiate the workflow.
+- **FR4 – Automatic Task Creation:** The system must automatically create a catalog task associated with the requested item.
+- **FR5 – Task Description:** The system must populate the task short description and description with “Laptop need to Configured”.
+- **FR6 – Task Assignment:** The system must assign the generated catalog task to the Hardware assignment group.
+- **FR7 – Approval Status:** The catalog task must have its approval field set to “Approved”, as configured in the implemented flow.
+- **FR8 – Catalog Item Integration:** The Standard Laptop catalog item must be associated with the Standard Laptop Task flow.
+- **FR9 – Task Verification:** The system must allow the IT team to verify the created task and check its description, assignment group, and status.
+
+## 3. Non-Functional Requirements
+
+- **Efficiency:** The workflow should reduce manual effort and delays in processing standard laptop requests.
+- **Reliability:** The workflow should consistently create the required catalog task for eligible requests.
+- **Usability:** The Standard Laptop catalog item should provide a straightforward request experience.
+- **Maintainability:** The workflow should be easy for authorized administrators to review and update.
+- **Consistency:** The system should use standardized task descriptions and assignment rules.
+- **Performance:** The workflow should create and assign tasks promptly after the applicable trigger conditions are met.
+
+*Note: These non-functional requirements describe the intended system qualities; specific performance targets and reliability metrics are not defined in the project document.*
+
+## 4. Technical Requirements
+
+- **Platform:** ServiceNow.
+- **Automation Tool:** Flow Designer.
+- **Flow Name:** Standard Laptop Task.
+- **Application Scope:** Global.
+- **Run As:** System user.
+- **Trigger:** Service Catalog.
+- **Action:** Create Catalog Task.
+- **Target Table:** Catalog Task.
+- **Request Item:** Requested Item Record.
+- **Assignment Group:** Hardware.
+- **Catalog Item:** Standard Laptop.
+- **Process Configuration:** Associate the flow with the Standard Laptop catalog item through Maintain Items.
+
+## 5. User Requirements
+
+- Employees must be able to submit standard laptop requests through the Service Catalog.
+- Requests must follow the configured approval process.
+- The IT procurement team should not need to create the configuration task manually.
+- The Hardware team must receive the generated task with the required details.
+- Authorized IT staff must be able to inspect the task and verify its assignment.
+
+## 6. System Requirements
+
+- ServiceNow must have the required Service Catalog and Flow Designer functionality available.
+- The Standard Laptop catalog item must exist and be configured.
+- The Hardware assignment group must be available.
+- The workflow must have the necessary permissions to create catalog tasks and assign them to the Hardware group.
+- The approval process and flow trigger must be configured to work together correctly.
+
+## 7. Acceptance Criteria
+
+The implementation will be considered successful when:
+
+1. A user can submit a Standard Laptop request through the Service Catalog.
+2. The request can proceed through the configured approval process.
+3. The workflow creates a catalog task for the requested item after the applicable approval event.
+4. The task short description and description contain “Laptop need to Configured”.
+5. The task is assigned to the Hardware assignment group.
+6. The catalog task displays the expected details when opened for verification.
+7. The workflow operates without requiring manual creation of the configuration task.
+
+## 8. Conclusion
+
+The requirement analysis establishes the functional, non-functional, technical, and user requirements for automating standard laptop procurement. By integrating ServiceNow Flow Designer with the Standard Laptop catalog item, the solution aims to streamline task creation, ensure consistent assignment to the Hardware team, reduce manual intervention, and improve the efficiency of IT procurement operations.
