@@ -1,0 +1,115 @@
+# Project Development
+
+## 1. Introduction
+Project development involves creating and configuring an automated workflow in ServiceNow Flow Designer to streamline the procurement process for standard laptop orders. The workflow is designed to create a catalog task with the required details and assign it to the Hardware team for laptop configuration.
+
+## 2. Development Environment
+The project is developed using the following ServiceNow components:
+
+- **Platform:** ServiceNow
+- **Automation Tool:** Flow Designer
+- **Application Scope:** Global
+- **Run As:** System user
+- **Trigger:** Service Catalog
+- **Action:** Create Catalog Task
+- **Catalog Item:** Standard Laptop
+
+## 3. Flow Creation and Configuration
+
+The first development activity is to create a new flow in ServiceNow Flow Designer.
+
+### Steps
+1. Log in to ServiceNow.
+2. Navigate to **All** and search for Flow Designer.
+3. Open Flow Designer under Process Automation.
+4. Click **New** and select **Flow**.
+5. Enter the flow name as **Standard Laptop Task**.
+6. Set the application scope to **Global**.
+7. Select **System user** in the Run As field.
+8. Submit the flow configuration.
+
+## 4. Trigger Configuration
+
+The Service Catalog trigger is configured to initiate the workflow for the Standard Laptop request process.
+
+### Steps
+1. Open the newly created flow.
+2. Click **Add a trigger**.
+3. Search for **Service Catalog**.
+4. Select the Service Catalog trigger.
+5. Click **Done** to save the trigger configuration.
+
+## 5. Catalog Task Creation
+
+The Create Catalog Task action is used to generate a task for the Hardware team.
+
+### Steps
+1. Under Actions, click **Add an action**.
+2. Search for and select **Create Catalog Task**.
+3. Drag and drop the **Requested Item Record** into the Request Item field.
+4. Verify that the target table is automatically populated as **Catalog Task**.
+5. Configure the task fields as follows:
+
+| Field | Value |
+|---|---|
+| Short Description | Laptop need to Configured |
+| Description | Laptop need to Configured |
+| Assignment Group | Hardware |
+| Approval | Approved |
+
+6. Leave the remaining fields at their default values, as specified in the project document.
+7. Click **Done** to complete the action configuration.
+
+## 6. Saving and Activating the Flow
+
+After configuring the trigger and action:
+
+1. Save the flow.
+2. Click **Activate**.
+3. Confirm activation when prompted.
+
+The flow is now configured for association with the Standard Laptop catalog item.
+
+## 7. Flow Assignment to the Catalog Item
+
+The next development activity is to associate the flow with the Standard Laptop service catalog item.
+
+### Steps
+1. Navigate to **All** in ServiceNow.
+2. Search for and open **Maintain Items**.
+3. Search for **Standard Laptop** in the Name field.
+4. Open the Standard Laptop record.
+5. Navigate to the **Process Engine** section.
+6. Remove the existing automation configuration as described in the project document.
+7. Select the **Flow** option.
+8. Add the newly created **Standard Laptop Task** flow.
+9. Save the record.
+
+This configuration connects the catalog item with the automated workflow.
+
+## 8. Workflow Execution
+
+After development and configuration, the workflow is tested through the Service Catalog.
+
+1. Open the Service Catalog.
+2. Navigate to Hardware.
+3. Select **Standard Laptop**.
+4. Click **Order Now** to submit the request.
+5. Open the request number from the order status.
+6. Navigate to the Approvers section and approve the request.
+7. Open the associated Requested Item record.
+8. Navigate to the Catalog Tasks section.
+9. Open the generated catalog task.
+10. Verify the short description and assignment group.
+
+## 9. Development Outcome
+
+The development process produces a ServiceNow workflow configured to create a catalog task for standard laptop requests and assign it to the Hardware group. The task includes the specified short description, description, and approval field value.
+
+The final verification checks that the catalog task is associated with the correct requested item and contains the expected configuration details.
+
+## 10. Conclusion
+
+The project development phase implements the standard laptop procurement automation using ServiceNow Flow Designer. By configuring the Service Catalog trigger, Create Catalog Task action, and catalog item association, the solution reduces the need for manual task creation and supports consistent assignment of laptop configuration tasks to the Hardware team.
+
+The implementation should be validated to ensure that task creation occurs at the intended approval stage and that the workflow behaves correctly for the Standard Laptop catalog item.
