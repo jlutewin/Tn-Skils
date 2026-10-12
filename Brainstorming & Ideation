@@ -1,0 +1,46 @@
+# Brainstorming & Ideation
+
+## 1. Problem Identification
+The current IT procurement process for standard laptop orders involves manual intervention and can result in delays, missed configuration tasks, and inefficient task allocation. These issues can increase user waiting time and create additional workload for the IT procurement team.
+
+## 2. Brainstorming Ideas
+The following ideas were considered to improve the standard laptop procurement process:
+
+- **Workflow Automation:** Use ServiceNow Flow Designer to automate the creation of catalog tasks after a service request is approved.
+- **Automatic Task Assignment:** Automatically assign laptop configuration tasks to the Hardware assignment group.
+- **Standardized Task Details:** Populate the task short description and description with “Laptop need to Configured” to clearly communicate the required activity.
+- **Approval-Based Processing:** Configure the workflow to set the approval field to “Approved” when creating the catalog task, as described in the project implementation.
+- **Service Catalog Integration:** Connect the automated flow to the Standard Laptop catalog item so that the workflow runs for the relevant requests.
+- **Reduced Manual Intervention:** Minimize the need for IT staff to create and assign configuration tasks manually.
+- **Improved Task Tracking:** Allow the team to review the generated catalog task and verify its short description, assignment group, and status.
+
+## 3. Proposed Solution
+The proposed solution is to implement an automated workflow using ServiceNow Flow Designer. The flow, named **Standard Laptop Task**, uses a Service Catalog trigger and the Create Catalog Task action.
+
+When a standard laptop request is approved, the workflow creates a catalog task, populates the required task details, and assigns the task to the Hardware group. The flow is then associated with the Standard Laptop service catalog item.
+
+## 4. Implementation Approach
+The solution is organized into three milestones:
+
+1. **Flow Creation:** Create and activate the Standard Laptop Task flow with the required trigger and catalog task action.
+2. **Flow Assignment:** Associate the newly created flow with the Standard Laptop catalog item through Maintain Items.
+3. **Service Catalog Testing:** Submit a Standard Laptop request, approve it, and verify that the catalog task is created with the expected description and Hardware assignment group.
+
+## 5. Expected Benefits
+- Faster processing of standard laptop requests.
+- Reduced manual workload for the IT procurement team.
+- Fewer missed or delayed configuration tasks.
+- Consistent task descriptions and assignment.
+- Better utilization of IT hardware team resources.
+- Improved visibility into the laptop configuration process.
+- A smoother experience for employees requesting standard laptops.
+
+## 6. Future Enhancement Ideas
+- Send automatic notifications to the Hardware team when a new catalog task is created.
+- Add task prioritization based on user requirements or business needs.
+- Introduce tracking and reporting for task completion time.
+- Add error handling for failed task creation or assignment.
+- Extend the workflow to other standard IT hardware requests, where appropriate.
+
+## 7. Conclusion
+The brainstorming and ideation phase identified workflow automation, automatic task assignment, standardized task details, and approval-based processing as the key improvements for standard laptop procurement. Implementing these ideas through ServiceNow Flow Designer provides a structured approach to reducing manual intervention, improving task allocation, and supporting timely laptop configuration.
