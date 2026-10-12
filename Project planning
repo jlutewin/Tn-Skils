@@ -1,0 +1,108 @@
+# Project Planning
+
+## 1. Introduction
+Project planning defines the activities, milestones, resources, and testing procedures required to automate the standard laptop procurement process using ServiceNow Flow Designer. The main objective is to reduce manual intervention, automate catalog task creation, and ensure that laptop configuration tasks are assigned to the Hardware team after the applicable approval process.
+
+## 2. Project Objectives
+- Automate the creation of catalog tasks for standard laptop requests.
+- Assign configuration tasks automatically to the Hardware assignment group.
+- Standardize task descriptions and required field values.
+- Reduce manual effort and processing delays.
+- Improve the efficiency of IT procurement operations.
+
+## 3. Project Scope
+
+### In Scope
+- Creating the Standard Laptop Task flow in Flow Designer.
+- Configuring the Service Catalog trigger.
+- Using the Create Catalog Task action.
+- Setting the task short description, description, assignment group, and approval field.
+- Associating the flow with the Standard Laptop catalog item.
+- Testing the workflow by submitting and approving a laptop request.
+- Verifying the generated catalog task.
+
+### Out of Scope
+- Automating procurement for other hardware categories.
+- Integrating with external suppliers or inventory systems.
+- Implementing advanced reporting and analytics.
+- Automating laptop delivery and asset allocation beyond the configuration task.
+
+*Note: These exclusions define a proposed project boundary; the source document does not explicitly list out-of-scope activities.*
+
+## 4. Project Milestones
+
+| Milestone | Activities | Expected Outcome |
+|---|---|---|
+| Milestone 1: Flow Creation | Create the flow, configure the Service Catalog trigger, add the Create Catalog Task action, and activate the flow. | Automated task creation workflow |
+| Milestone 2: Flow Assignment | Open Maintain Items and associate the flow with the Standard Laptop catalog item. | Catalog item linked to the flow |
+| Milestone 3: Service Catalog Testing | Submit a laptop request, complete approval, and inspect the generated catalog task. | Verified task details and assignment |
+
+## 5. Project Timeline
+
+The following is a proposed schedule for planning purposes. The original project document does not specify actual dates or durations.
+
+| Phase | Planned Duration | Activities |
+|---|---|---|
+| Requirement Analysis | 1 day | Identify the procurement problem and required automation |
+| Project Design | 1 day | Define the workflow and Flow Designer configuration |
+| Flow Development | 2 days | Create and configure the Standard Laptop Task flow |
+| Flow Assignment | 1 day | Associate the flow with the Standard Laptop catalog item |
+| Testing and Validation | 1 day | Submit a request, approve it, and verify task creation |
+| Documentation | 1 day | Document the implementation and results |
+| **Total** | **7 working days** | **Estimated project duration** |
+
+## 6. Resource Planning
+
+| Resource | Responsibility |
+|---|---|
+| Project Developer | Create and configure the workflow |
+| IT Procurement Team | Define the laptop ordering requirements |
+| ServiceNow Administrator | Support platform configuration and permissions |
+| Hardware Team | Receive and process laptop configuration tasks |
+| Requesting User | Submit the Standard Laptop request and validate the process |
+
+These roles represent a proposed resource plan; the source document does not specify individual project assignments.
+
+## 7. Tools and Technologies
+- **Platform:** ServiceNow
+- **Automation Tool:** Flow Designer
+- **Request Interface:** Service Catalog
+- **Workflow Components:** Service Catalog trigger and Create Catalog Task action
+- **Configuration Interface:** Maintain Items
+- **Target Record:** Catalog Task
+
+## 8. Risk Planning
+
+| Potential Risk | Mitigation Strategy |
+|---|---|
+| Flow does not trigger correctly | Test the trigger using a Standard Laptop request |
+| Catalog task is not created | Verify the flow configuration and action inputs |
+| Incorrect assignment group | Confirm that Hardware is selected in the assignment group field |
+| Task is created before approval | Validate the trigger and approval conditions |
+| Missing or incorrect task details | Check the short description and description values |
+| Permission-related failures | Verify the required roles and execution permissions |
+
+## 9. Testing Plan
+The following activities will be performed to validate the implementation:
+
+1. Open the Service Catalog and select Standard Laptop.
+2. Submit a laptop request.
+3. Open the request record and complete the configured approval process.
+4. Open the requested item record.
+5. Navigate to the Catalog Tasks section.
+6. Open the generated catalog task.
+7. Verify the task description, assignment group, approval field, and status.
+8. Confirm that the task is linked to the correct requested item.
+
+## 10. Success Criteria
+The project will be considered successful when:
+
+- The Standard Laptop catalog item is associated with the intended flow.
+- The workflow creates the required catalog task.
+- The task is assigned to the Hardware group.
+- The required task descriptions are populated correctly.
+- The workflow behaves as expected during approval and testing.
+- Manual task creation is no longer required for the tested workflow.
+
+## 11. Conclusion
+The project plan organizes the automation initiative into requirement analysis, design, development, flow assignment, testing, and documentation. The three main implementation milestones provide a structured approach to configuring and validating the ServiceNow Flow Designer workflow. Successful implementation is expected to reduce manual workload, improve task assignment, and support a more efficient standard laptop procurement process.
