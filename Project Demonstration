@@ -1,0 +1,106 @@
+# Project Demonstration
+
+## 1. Introduction
+The project demonstration explains the working of the automated standard laptop procurement workflow developed using ServiceNow Flow Designer. The demonstration shows how a user submits a laptop request through the Service Catalog, how the request is approved, and how a catalog task is created and assigned to the Hardware team.
+
+## 2. Demonstration Objectives
+- Demonstrate the creation of the Standard Laptop Task flow.
+- Show the configuration of the Service Catalog trigger.
+- Demonstrate the Create Catalog Task action.
+- Show how the flow is associated with the Standard Laptop catalog item.
+- Verify that the catalog task is created with the required description and assignment group.
+
+## 3. Demonstration Procedure
+
+### Step 1: Open Flow Designer
+1. Log in to ServiceNow.
+2. Navigate to **All** and search for Flow Designer.
+3. Open Flow Designer under Process Automation.
+4. Locate the flow named **Standard Laptop Task**.
+
+**Demonstration point:** Show the flow name and its configuration.
+
+### Step 2: Demonstrate the Trigger
+1. Open the Standard Laptop Task flow.
+2. Display the configured **Service Catalog** trigger.
+
+**Demonstration point:** Explain that the trigger initiates the workflow for the relevant service catalog request.
+
+### Step 3: Demonstrate the Catalog Task Action
+1. Open the **Create Catalog Task** action.
+2. Show that the Requested Item Record is mapped to the Request Item field.
+3. Display the configured task fields.
+
+| Field | Configured Value |
+|---|---|
+| Short Description | Laptop need to Configured |
+| Description | Laptop need to Configured |
+| Assignment Group | Hardware |
+| Approval | Approved |
+
+**Demonstration point:** Explain how the action creates a catalog task and populates the required details.
+
+### Step 4: Demonstrate Flow Activation
+1. Show that the flow is saved and activated.
+2. Explain that the flow is intended to automate catalog task creation.
+
+### Step 5: Demonstrate Flow Assignment
+1. Navigate to **Maintain Items**.
+2. Search for the **Standard Laptop** catalog item.
+3. Open the record and display the **Process Engine** section.
+4. Show the association with the **Standard Laptop Task** flow.
+
+**Demonstration point:** Explain how the catalog item is connected to the automated workflow.
+
+### Step 6: Submit a Standard Laptop Request
+1. Navigate to **Service Catalog**.
+2. Open the **Hardware** category.
+3. Select **Standard Laptop**.
+4. Click **Order Now**.
+5. Display the resulting order status and request number.
+
+**Demonstration point:** Show how an employee initiates the laptop procurement process.
+
+### Step 7: Demonstrate Request Approval
+1. Open the request using the request number.
+2. Navigate to the **Approvers** section.
+3. Open the approval record.
+4. Approve the request using the available approval action.
+
+**Demonstration point:** Show the approval stage in the request process.
+
+### Step 8: Verify the Generated Catalog Task
+1. Open the associated Requested Item record.
+2. Scroll to the **Catalog Tasks** section.
+3. Open the generated catalog task.
+4. Verify the short description, description, and assignment group.
+5. Confirm that the task is linked to the correct requested item.
+
+**Demonstration point:** Show that the catalog task contains the expected details and is assigned to the Hardware team.
+
+## 4. Expected Demonstration Output
+
+| Verification Item | Expected Output |
+|---|---|
+| Catalog Item | Standard Laptop |
+| Flow Name | Standard Laptop Task |
+| Catalog Task | Created for the requested item |
+| Short Description | Laptop need to Configured |
+| Description | Laptop need to Configured |
+| Assignment Group | Hardware |
+| Approval Field | Approved |
+| Request Association | Linked to the correct requested item |
+
+*Note: These are expected outputs based on the project configuration. The uploaded document describes the demonstration steps but does not provide independent evidence of every test result.*
+
+## 5. Benefits Demonstrated
+- Automated creation of laptop configuration tasks.
+- Consistent assignment of tasks to the Hardware group.
+- Reduced need for manual task creation.
+- Improved visibility into the laptop request process.
+- More structured handling of standard laptop procurement requests.
+
+## 6. Conclusion
+The project demonstration presents the end-to-end workflow for automating standard laptop procurement using ServiceNow Flow Designer. It covers flow configuration, catalog item association, request submission, approval, and verification of the generated catalog task. The demonstration is intended to show how workflow automation can improve task assignment and reduce manual effort in IT procurement.
+
+The final demonstration should confirm that the flow creates the task at the intended approval stage and that the generated catalog task contains the required details.
