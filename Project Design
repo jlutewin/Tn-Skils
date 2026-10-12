@@ -1,0 +1,126 @@
+# Project Design
+
+## 1. Introduction
+The project design describes the architecture and workflow for automating standard laptop procurement using ServiceNow Flow Designer. The design focuses on automatically creating a catalog task and assigning it to the Hardware team after the applicable service request approval.
+
+## 2. System Architecture
+The system consists of the following components:
+
+- **Service Catalog:** Allows users to submit standard laptop requests.
+- **Approval Process:** Supports approval of the requested item.
+- **Flow Designer:** Automates the task creation process.
+- **Create Catalog Task Action:** Creates a catalog task associated with the requested item.
+- **Hardware Assignment Group:** Receives the task for laptop configuration.
+- **Catalog Task Record:** Stores the task description, assignment group, and other relevant details.
+
+## 3. Workflow Design
+
+The workflow follows these steps:
+
+1. The user opens the ServiceNow Service Catalog.
+2. The user selects the **Standard Laptop** catalog item.
+3. The user submits the laptop request.
+4. The request proceeds through the configured approval process.
+5. The **Standard Laptop Task** flow is triggered through the Service Catalog trigger.
+6. The flow executes the **Create Catalog Task** action.
+7. The requested item record is passed to the Request Item field.
+8. The system populates the task short description and description with “Laptop need to Configured”.
+9. The task is assigned to the **Hardware** assignment group.
+10. The task approval field is set to “Approved”, according to the implemented flow configuration.
+11. The Hardware team can open the generated catalog task and proceed with laptop configuration.
+
+## 4. Flow Designer Configuration
+
+The flow is designed with the following configuration:
+
+| Component | Configuration |
+|---|---|
+| Flow Name | Standard Laptop Task |
+| Application Scope | Global |
+| Run As | System user |
+| Trigger | Service Catalog |
+| Action | Create Catalog Task |
+| Target Table | Catalog Task |
+| Request Item | Requested Item Record |
+| Short Description | Laptop need to Configured |
+| Description | Laptop need to Configured |
+| Assignment Group | Hardware |
+| Approval Field | Approved |
+
+## 5. Process Flow Diagram
+
+```text
+        Start
+          |
+          v
+ User selects Standard Laptop
+          |
+          v
+ Submit Service Catalog Request
+          |
+          v
+   Request Approval Process
+          |
+          v
+  Request is Approved
+          |
+          v
+ Service Catalog Trigger
+          |
+          v
+   Standard Laptop Task
+          |
+          v
+   Create Catalog Task
+          |
+          v
+ Populate Task Description
+          |
+          v
+ Assign to Hardware Group
+          |
+          v
+ Verify Catalog Task
+          |
+          v
+         End
+```
+
+## 6. Integration Design
+The Standard Laptop Task flow is associated with the Standard Laptop catalog item through **Maintain Items** in ServiceNow. This integration allows the catalog item to use the newly created flow for task automation.
+
+The flow uses the Requested Item Record as the input to the Create Catalog Task action, linking the generated task to the original laptop request.
+
+## 7. Data Design
+
+The catalog task contains the following key information:
+
+| Field | Purpose |
+|---|---|
+| Request Item | Links the task to the requested laptop item |
+| Short Description | Identifies the laptop configuration requirement |
+| Description | Provides details about the configuration task |
+| Assignment Group | Routes the task to the Hardware team |
+| Approval | Stores the configured approval value |
+| Status | Tracks the task's progress according to the available ServiceNow configuration |
+
+## 8. Security and Access Design
+The flow is configured to run as the **System user**, as specified in the project implementation. Access to the Service Catalog, Flow Designer, approval records, and catalog tasks should be managed through appropriate ServiceNow roles and permissions.
+
+## 9. Testing and Validation Design
+The design will be validated by placing a Standard Laptop order and checking the generated catalog task.
+
+The following items must be verified:
+
+- The Standard Laptop request is submitted successfully.
+- The approval process completes as expected.
+- The flow creates the required catalog task.
+- The task is linked to the correct requested item.
+- The short description and description contain the expected text.
+- The assignment group is set to Hardware.
+- The catalog task can be opened and inspected.
+
+## 10. Conclusion
+The project design provides a structured approach to automating standard laptop procurement using ServiceNow Flow Designer. By connecting the Service Catalog, approval process, automated task creation, and Hardware assignment group, the solution aims to reduce manual effort, improve task allocation, and support timely laptop configuration.
+
+**Design consideration:** The flow should be tested to confirm that catalog task creation occurs only after the intended approval condition is satisfied. The project configuration specifies an Approved value for the catalog task's approval field, which should not be assumed to enforce approval of the original request by itself.
