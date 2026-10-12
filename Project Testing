@@ -1,0 +1,102 @@
+# Project Testing
+
+## 1. Introduction
+Project testing is performed to verify that the automated standard laptop procurement workflow functions as expected. The testing process focuses on validating the Service Catalog request, approval process, Flow Designer execution, catalog task creation, and assignment to the Hardware team.
+
+## 2. Testing Objectives
+- Verify that users can submit standard laptop requests through the Service Catalog.
+- Confirm that the Standard Laptop Task flow is associated with the correct catalog item.
+- Verify that the workflow creates a catalog task for the requested item.
+- Ensure that the task short description and description are populated correctly.
+- Confirm that the task is assigned to the Hardware assignment group.
+- Verify the generated catalog task through the Requested Item record.
+
+## 3. Testing Environment
+
+| Component | Configuration |
+|---|---|
+| Platform | ServiceNow |
+| Automation Tool | Flow Designer |
+| Flow Name | Standard Laptop Task |
+| Trigger | Service Catalog |
+| Action | Create Catalog Task |
+| Catalog Item | Standard Laptop |
+| Assignment Group | Hardware |
+| Target Record | Catalog Task |
+
+## 4. Test Cases
+
+| Test Case ID | Test Scenario | Expected Result |
+|---|---|---|
+| TC01 | Open the Service Catalog and select Standard Laptop. | The Standard Laptop catalog item is available for selection. |
+| TC02 | Submit a standard laptop request using Order Now. | The system creates the request and displays its order status. |
+| TC03 | Open the request and inspect the Approvers section. | The configured approval record is available for review. |
+| TC04 | Approve the request. | The request approval is recorded as approved. |
+| TC05 | Open the associated Requested Item record. | The requested item is available for inspection. |
+| TC06 | Check the Catalog Tasks section. | The generated catalog task is listed. |
+| TC07 | Open the catalog task and inspect its short description. | The short description is `Laptop need to Configured`. |
+| TC08 | Inspect the task description. | The description is `Laptop need to Configured`. |
+| TC09 | Inspect the Assignment Group field. | The assignment group is `Hardware`. |
+| TC10 | Inspect the catalog task approval field. | The field contains the configured value `Approved`. |
+
+## 5. Testing Procedure
+
+### Step 1: Submit a Laptop Request
+1. Log in to ServiceNow.
+2. Navigate to **Service Catalog**.
+3. Open the **Hardware** category.
+4. Select **Standard Laptop**.
+5. Click **Order Now**.
+6. Record the request number displayed in the order status.
+
+### Step 2: Approve the Request
+1. Open the request using the request number.
+2. Navigate to the **Approvers** section.
+3. Open the relevant approval record.
+4. Approve the request using the available approval action.
+
+### Step 3: Verify Catalog Task Creation
+1. Open the associated Requested Item record.
+2. Scroll to the **Catalog Tasks** section.
+3. Open the generated catalog task.
+4. Verify the short description, description, assignment group, and approval field.
+5. Confirm that the task is associated with the correct requested item.
+
+## 6. Expected Testing Results
+
+The expected outcome is that the Standard Laptop request proceeds through the configured approval process and the flow creates a catalog task containing the required details.
+
+| Validation Item | Expected Result |
+|---|---|
+| Service Catalog request | Submitted successfully |
+| Approval | Recorded as approved |
+| Catalog task creation | Task created for the requested item |
+| Short description | Laptop need to Configured |
+| Description | Laptop need to Configured |
+| Assignment group | Hardware |
+| Approval field | Approved |
+| Requested item association | Correct requested item linked |
+
+*Note: These are expected results derived from the project configuration. Actual test execution results were not included in the uploaded document.*
+
+## 7. Error Handling and Validation
+The following checks can help identify configuration issues during testing:
+
+- If the task is not created, verify that the flow is active and correctly associated with the Standard Laptop catalog item.
+- If the assignment group is incorrect, review the Assignment Group field in the Create Catalog Task action.
+- If the task description is missing or incorrect, verify the configured field values.
+- If the flow runs before the intended approval stage, review the trigger configuration and approval conditions.
+
+## 8. Acceptance Criteria
+Testing is considered successful when:
+
+1. A Standard Laptop request can be submitted.
+2. The request approval process operates as configured.
+3. The workflow creates the expected catalog task.
+4. The task contains the required short description and description.
+5. The task is assigned to the Hardware group.
+6. The catalog task is linked to the correct requested item.
+7. The resulting records can be inspected in ServiceNow.
+
+## 9. Conclusion
+The testing phase validates the automated laptop procurement workflow by checking request submission, approval, task creation, and assignment. The expected results demonstrate how ServiceNow Flow Designer can reduce manual task creation and support consistent routing of laptop configuration work to the Hardware team. Successful completion should be confirmed by executing the test cases and recording the actual results.
